@@ -5,9 +5,9 @@
   "type": "module",
   "main": "./eletronjs/index.cjs",
   "scripts": {
-    "dev": "rollup -c -w",
+    "sv:dev": "rollup -c -w",
     "start": "sirv public --no-clear",
-    "electron:dev": "concurrently -k \"pnpm dev\" \"pnpm:electron-start\"",
+    "dev": "concurrently -k \"pnpm sv:dev\" \"pnpm:electron-start\"",
     "electron-start": "wait-on public/build/bundle.js && electron .",
     "build": "rollup -c",
     "package": "electron-builder"
