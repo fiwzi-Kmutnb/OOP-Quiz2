@@ -128,11 +128,11 @@
 
             </div>
             <div>
-            <p class=" font-bold text-md">เลขคู่มลคล:</p>
+            <p class=" font-bold text-md">เลขคู่ความหมาย:</p>
             {#if dataShow.duo.length > 0}
                 <ul>
                     {#each dataShow.duo as duo}
-                        <li>{duo}</li>
+                        <li>- {duo}</li>
                     {/each}
                 </ul>
             {:else}
