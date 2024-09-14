@@ -1,0 +1,51 @@
+{
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./eletronjs/index.cjs",
+  "scripts": {
+    "dev": "rollup -c -w",
+    "start": "sirv public --no-clear",
+    "electron:dev": "concurrently -k \"pnpm dev\" \"pnpm:electron-start\"",
+    "electron-start": "wait-on public/build/bundle.js && electron .",
+    "build": "rollup -c",
+    "package": "electron-builder"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-terser": "^0.4.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@tsconfig/svelte": "^3.0.0",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.0.1",
+    "daisyui": "^4.12.10",
+    "electron": "^32.1.0",
+    "electron-builder": "^25.0.5",
+    "postcss": "^8.4.45",
+    "rollup": "^3.15.0",
+    "rollup-plugin-css-only": "^4.3.0",
+    "rollup-plugin-hot": "^0.1.1",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-svelte": "^7.1.2",
+    "rollup-plugin-svelte-hot": "1.0.0-8",
+    "rollup-plugin-terser": "^7.0.2",
+    "svelte": "^3.59.2",
+    "svelte-check": "^3.0.0",
+    "svelte-fa": "^4.0.2",
+    "svelte-preprocess": "^5.0.0",
+    "tailwindcss": "^3.4.11",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.0",
+    "wait-on": "^8.0.1"
+  },
+  "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@types/node": "^22.5.5",
+    "sirv-cli": "^2.0.0",
+    "svelte-toasts": "^1.1.2"
+  }
+}

@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.animation-1 {
+	animation: fadeIn 0.1s ease-in-out;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+body {
+	@apply bg-[#e7971e];
+    /* background-color: #833410; */
+	margin: 0;
+	width: 100%;
+	overflow: hidden;
+	min-height: 100vh;
+}
+* {
+	font-family: 'Bai Jamjuree',sans-serif;
+	font-weight: 400;
+}
+.titlebar {
+    -webkit-app-region: drag;
+}
