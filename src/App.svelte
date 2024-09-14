@@ -50,6 +50,14 @@
     }
     toasts.clearAll();
     const rootDigit = calculatorDigit.root(form.houseNumber);
+    if(rootDigit === -1){
+        toasts.add({
+            title: "เกิดข้อผิดพลาด",
+            description: "กรุณากรอกเลขที่บ้านให้ถูกต้อง",
+            type: "warning",
+          });
+          return;
+    }
     const address = calculatorDigit.address(form.houseNumber);
 
     const birthdayNumberSearch: BirthdayNumberSearch = new BirthdayNumberSearch(
