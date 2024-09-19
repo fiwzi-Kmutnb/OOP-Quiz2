@@ -8,14 +8,21 @@
   import DuoNumberRepository from "./lib/utils/repository/DuoNumberRepository";
   import HomeNumberRepository from "./lib/utils/repository/HomeNumberRepository";
   import DuoNumberSearch from "./lib/utils/DuoNumberSearch";
+  import Button from "./lib/components/button.svelte";
 
-
-
-  const birthdayNumberRepository: BirthdayNumberRepository =
-    new BirthdayNumberRepository();
+  /*
+  ตามหลักของ Javascrpt แล้ว OOP ไม่จำเป็นต้องทำแบบนี้มากนัก เพราะส่วนใหญ่เน้นการใช้ export function kak(){} แทน หรือ export const kak = () => {} อะไรก็ว่าไป
+  OOP ไม่ค่อยมีความจำเป็น(ไม่ได้หมายความว่าไม่ควรเขียนเลย ขึ้นกับงานที่เหมาะสม) เพราะเสียเวลาในการเขียนมากกว่า และยังมีปัญหาในการเข้าใจกันอีกด้วย
+  */
+ 
+  const birthdayNumberRepository: BirthdayNumberRepository = new BirthdayNumberRepository();
   const duoNumberRepository: DuoNumberRepository = new DuoNumberRepository();
   const homeNumberRepository: HomeNumberRepository = new HomeNumberRepository();
   const calculatorDigit: CalculatorDigit = new CalculatorDigit();
+
+
+
+
   let isModalOpen: boolean = false;
   let form = {
     houseNumber: "",
@@ -226,14 +233,9 @@
         </label>
       </div>
       <div class="w-full text-center mt-5">
-        <button
-          on:click={() => showModal()}
-          class="btn bg-[#a3e635] hover:bg-[#84cc16] border-0 btn-outline shadow-2xl"
-        >
-          <p class="flex gap-3">
+        <Button onClick={() => showModal()}>
             <Fa icon={faCircleCheck} />ค้นหาความมงคล
-          </p>
-        </button>
+        </Button>
       </div>
     </div>
   </div>
