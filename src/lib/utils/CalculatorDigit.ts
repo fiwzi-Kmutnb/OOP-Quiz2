@@ -1,6 +1,8 @@
 export default class CalculatorDigit {
 
   public root(str: string): number {
+    if(this.address(str) == '')
+      return -1;
     let sum: number = -1;
     let len: number = str.length;
     if (len > 0) {
